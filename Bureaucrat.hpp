@@ -22,11 +22,17 @@ public:
 		GradeTooLowException() : runtime_error("Grade too low!"){};
 	};
 
+	std::string getName();
+	int getGrade();
+	void promote();
+	void demote();
+
 private:
 	const std::string name;
 	int grade;
 };
 
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
 #endif
 
 /* ************************************************************************** */

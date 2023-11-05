@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
-	if (grade < 0)
+	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
 		throw GradeTooLowException();
@@ -11,18 +11,53 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 Bureaucrat::~Bureaucrat() {}
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade)
 {
-	if (grade < 0)
+	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
 		throw GradeTooLowException();
 }
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-	// hahaha yeah right.
-	// this->name = bureaucrat.name;
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 	this->grade = other.grade;
 	return (*this);
 }
+
+std::string Bureaucrat::getName()
+{
+	return (this->name);
+}
+
+int Bureaucrat::getGrade()
+{
+	return (this->grade);
+}
+
+void Bureaucrat::promote()
+{
+	this->grade--;
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
+}
+
+void Bureaucrat::demote()
+{
+	this->grade++;
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
+}
+
+// std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
+// {
+// 	os << b.getName() << ", bureaucrat grade " << b.getGrade() << "."
+// }
 
 /* ************************************************************************** */
 /*                                                                            */

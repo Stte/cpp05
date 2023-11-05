@@ -2,10 +2,50 @@
 
 int main(void)
 {
-	// Bureaucrat("Jorma", 1);
-	// Bureaucrat("Jorma", 0);
-	// Bureaucrat("Jorma", 150);
-	Bureaucrat("Jorma", 151);
+	Bureaucrat jorma("Jorma", 1);
+	std::cout << jorma.getName() << "  " << jorma.getGrade() << std::endl;
+
+	Bureaucrat kalle("Kalle", 150);
+	std::cout << kalle.getName() << "  " << kalle.getGrade() << std::endl;
+
+	try
+	{
+		Bureaucrat jyrki("Jyrki", 0);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Caught a fish: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat klaus("Klaus", 151);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Caught a fish: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat pasi("Pasi", 1);
+		pasi.promote();
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Caught a fish: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat petteri("Petteri", 150);
+		petteri.demote();
+		std::cout << petteri.getName() << "  " << petteri.getGrade() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Caught a fish: " << e.what() << std::endl;
+	}
 }
 
 /* ************************************************************************** */
