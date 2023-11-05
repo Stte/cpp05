@@ -46,6 +46,8 @@ int main(void)
 	{
 		std::cout << "Caught a fish: " << e.what() << std::endl;
 	}
+
+	std::cout << kalle << std::endl;
 }
 
 /* ************************************************************************** */

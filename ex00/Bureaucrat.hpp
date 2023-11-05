@@ -22,8 +22,8 @@ public:
 		GradeTooLowException() : runtime_error("Grade too low!"){};
 	};
 
-	std::string getName();
-	int getGrade();
+	std::string getName() const;
+	int getGrade() const;
 	void promote();
 	void demote();
 
