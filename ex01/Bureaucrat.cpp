@@ -6,7 +6,7 @@
 /*   By: tspoof <tspoof@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:21:51 by tspoof            #+#    #+#             */
-/*   Updated: 2023/11/13 15:00:51 by tspoof           ###   ########.fr       */
+/*   Updated: 2023/11/13 15:20:07 by tspoof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,17 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 
 void Bureaucrat::signForm(Form &form)
 {
-	if (!form.getIsSigned())
+	if (form.getIsSigned())
+		std::cout << form.getName() << " is already signed." << std::endl;
+	try
+	{
+		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName()
 				  << std::endl;
-	else
-		std::cout << this->getName() << " couldn't sign " << form.getName()
-				  << " because form was already signed." << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << form.getName()
+				  << " because " << e.what() << std::endl;
+	}
 }

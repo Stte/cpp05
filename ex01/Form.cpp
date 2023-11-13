@@ -6,7 +6,7 @@
 /*   By: tspoof <tspoof@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:09:33 by tspoof            #+#    #+#             */
-/*   Updated: 2023/11/13 15:02:59 by tspoof           ###   ########.fr       */
+/*   Updated: 2023/11/13 15:21:34 by tspoof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->signGrade)
 		throw GradeTooLowException();
-	bureaucrat.signForm(*this);
 	this->isSigned = true;
 }
 
