@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 CC = c++
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJ = $(SRC:.cpp=.o)
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 

@@ -6,7 +6,7 @@
 /*   By: tspoof <tspoof@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:22:01 by tspoof            #+#    #+#             */
-/*   Updated: 2023/11/13 15:45:07 by tspoof           ###   ########.fr       */
+/*   Updated: 2023/11/15 14:23:15 by tspoof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ public:
 	void promote();
 	void demote();
 	void signForm(AForm &form);
+	void executeForm(AForm &form);
 
 private:
 	const std::string name;

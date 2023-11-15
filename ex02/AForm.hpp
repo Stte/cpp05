@@ -6,7 +6,7 @@
 /*   By: tspoof <tspoof@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:10:03 by tspoof            #+#    #+#             */
-/*   Updated: 2023/11/13 18:19:01 by tspoof           ###   ########.fr       */
+/*   Updated: 2023/11/15 14:31:20 by tspoof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ public:
 	void beSigned(Bureaucrat &bureaucrat);
 	void execute(Bureaucrat const &executor) const;
 
+protected:
 	virtual void execute_action() const = 0;
 
 private:

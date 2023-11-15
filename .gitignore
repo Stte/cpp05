@@ -1,3 +1,4 @@
 Bureaucrat
 *.o
 .vscode
+*_shrubbery
